@@ -1,4 +1,4 @@
-import subjectsDaos from "../DAOs/subject.daos.js";
+import subjectsDaos from "../daos/subject.daos.js";
 const subjectsControllers = {};
 
 subjectsControllers.getAll = (req, res) =>
