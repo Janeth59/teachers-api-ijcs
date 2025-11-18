@@ -1,5 +1,5 @@
 //import Student from "../models/Student.js";
-import Student from "../models/students.js";
+import Student from "../models/Students.js";
 const studentsDaos = {};
 
 //method to get all students
