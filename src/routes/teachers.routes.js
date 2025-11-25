@@ -6,7 +6,7 @@ const router = Router();
 router.get("/getAll", teachersControllers.getAll); //get
 router.get("/getOne/:teacher_id", teachersControllers.getOne); //get
 router.post("/insertOne", teachersControllers.insertOne); //post
-router.put("/updateOne/:teacher_id", teachersControllers.updateOne); //post
-router.delete("/deleteOne/:teacher_id", teachersControllers.deleteOne); //get
+router.post("/updateOne/:teacher_id", teachersControllers.updateOne); //post
+router.get("/deleteOne/:teacher_id", teachersControllers.deleteOne); //get
 
 export default router;

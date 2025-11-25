@@ -5,10 +5,10 @@ teachersControllers.getAll = (req, res) =>
         teachersDaos.getAll() 
         .then((teachers) => 
             {
-                res.json({
-                    data: teachers
-                })
-                //res.render("index.ejs", {teachers});
+                //res.json({
+                  //  data: teachers
+                //})
+                res.render("index.ejs", {teachers});
             })
         .catch((err) => {
             res.status(500).json({
@@ -25,8 +25,8 @@ teachersControllers.getOne = async (req, res) =>
     {
         if(teacher)
         {
-            res.json({data:teacher});
-            //res.render("edit.ejs", {teacher});
+            //res.json({data:teacher});
+            res.render("edit.ejs", {teacher});
         }
         else
         {
@@ -44,8 +44,8 @@ teachersControllers.insertOne = async (req, res) =>
     teachersDaos.insertOne(req.body)
     .then((newTeacher)=> 
     {
-        res.status(201).json({message:"Tecahcer created succesfully", data: newTeacher});
-        //res.redirect("/api/teachers/getAll");
+        //res.status(201).json({message:"Tecahcer created succesfully", data: newTeacher});
+        res.redirect("/api/teachers/getAll");
     })
     .catch((error)=>
     {
@@ -59,11 +59,11 @@ teachersControllers.updateOne = (req, res) =>
     .then((updatedTeacher)=>{
         if(updatedTeacher)
         {
-          res.json({
-            message: "Teacher updated succesfully",
-            data: updatedTeacher
-           });
-           //res.redirect("/api/teachers/getAll");
+          //res.json({
+            //message: "Teacher updated succesfully",
+            //data: updatedTeacher
+           //});
+           res.redirect("/api/teachers/getAll");
         }
         else
         {
@@ -79,11 +79,11 @@ teachersControllers.deleteOne = (req, res) =>
     .then((deletedTeacher)=>{
         if(deletedTeacher)
         {
-          res.json({
-            message: "Teacher deleted succesfully",
-            data: deletedTeacher
-           });
-           //res.redirect("/api/teachers/getAll");
+          //res.json({
+            //message: "Teacher deleted succesfully",
+            //data: deletedTeacher
+           //});
+           res.redirect("/api/teachers/getAll");
         }
         else
         {
